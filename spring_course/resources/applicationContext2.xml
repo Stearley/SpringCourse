@@ -7,25 +7,16 @@ http://www.springframework.org/schema/beans/spring-beans.xsd
 http://www.springframework.org/schema/context
 http://www.springframework.org/schema/context/spring-context.xsd">
 
-    <context:property-placeholder location="classpath:myApp.properties"/>
 
     <bean id = "myPet"
           class ="com.dankolyshkin.spring.Dog">
     </bean>
 
 
-    <bean id="myPerson"
-          class="com.dankolyshkin.spring.Person">
-           <property name="pet" ref="myPet">
-           </property>
-        <property name="Surname" value="${person.surname}">
-        </property>
-        <property name="age" value="${person.age}">
-        </property>
-    </bean>
+
 
 
 </beans>
         <!--        бин май персон зависит от бина  майпет через конструктор, теперь когда будут создаваться два бина, автоматически подргрузится-->
         <!--        зависимость  конструктор-майпет.-->
-<!--<constructor-arg ref="myPet"/>-->
+        <!--<constructor-arg ref="myPet"/>-->
