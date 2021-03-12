@@ -1,22 +1,37 @@
 package com.dankolyshkin.spring;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
+
+@Component("personBean")
 public class Person {
+//    @Autowired
     private Pet pet;
+    @Value("${person.surname}")
     private String surname;
+    @Value("${person.age}")
     private int age;
 
+//    @Autowired
 //    public Person(Pet pet) {
 //        System.out.println("Person bean is created");
 //        this.pet = pet;
 //    }
 
-    public Person() {
-        System.out.println("Person bean is created");
-    }
+//    public Person() {
+//        System.out.println("Person bean is created");
+//    }
 
-    //set -> setPet
-    public void setPet(Pet pet) {
-        System.out.println("Class Person: set Pet");
+////    @Autowired
+//    public void setPet(@Qualifier("catBean")Pet pet) {
+//        System.out.println("Person bean is created");
+//        this.pet = pet;
+//    }
+
+    public Person (Pet pet){
+        System.out.println("Person bean is created");
         this.pet = pet;
     }
 

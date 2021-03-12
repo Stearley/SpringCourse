@@ -9,7 +9,10 @@ http://www.springframework.org/schema/context/spring-context.xsd">
 
 
     <bean id = "myPet"
-          class ="com.dankolyshkin.spring.Dog">
+          class ="com.dankolyshkin.spring.Dog"
+          init-method="init"
+          destroy-method="destroy"
+          scope="prototype">
     </bean>
 
 
